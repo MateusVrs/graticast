@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --min-width-box: 330px;
+    --width-small-img: 330px;
+    --width-large-img: 380px;
+    --main-color: hsl(24, 17%, 46%);
+    --slider-color: rgb(16, 129, 63);
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Cabin', sans-serif;
+    background-color: var(--main-color);
+}
+
+main {
+    display: grid;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.box {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    grid-area: 2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #705c4cff;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 1100px;
+    box-shadow: 0px 0px 6px -1px black;
+    min-width: var(--min-width-box);
+    height: auto;
+    max-height: 700px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: hsla(23, 16%, 58%, 0.85);
+}
+
+.image-container {
+    display: block;
+    width: var(--width-large-img);
+    height: var(--width-large-img);
+}
+
+#image-logo {
+    height: 100%;
+    background-image: url(images/logo-pod-380.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.player-bar  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.player-bar #current-duration, #total-duration {
+    width: 50px;
+}
+
+.player-container #pp-container {
+    margin: 7px auto 0px auto;
+    opacity: 0.7;
+}
+
+.player-container #play-pause {
+    background-color: var(--slider-color);
+}
+
+.player-bar #seekbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border-radius: 10px;
+}
+
+#seekbar{
+    all: initial;
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-image: linear-gradient(to right, var(--slider-color) 1%, whitesmoke 1%);
+    opacity: 0.7;
+    border-radius: 50px;
+    height: 8px;
+}
+
+/*--- Thumb ---*/
+input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--slider-color);
+    height: 22px;
+    width: 15px;
+    border-radius: 6px;
+    margin-top: -11px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background-color: var(--slider-color);
+    height: 22px;
+    width: 15px;
+    border-radius: 6px;
+    margin-top: -10px;
+}
+
+input[type="range"]::-ms-thumb {
+    background-color: var(--slider-color);
+    height: 22px;
+    width: 15px;
+    border-radius: 6px;
+    margin-top: -10px;
+}
+
+
+/*--- Track ---*/
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: whitesmoke;
+    height: 0px;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: whitesmoke;
+    height: 0px;
+}
+
+input[type="range"]::-ms-track {
+    background-color: whitesmoke;
+    height: 0px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    color: hsla(0, 0%, 6%, 0.85);
+    margin-top: 5px;
+    height: 80%;
+    grid-area: 3;
+}
+
+footer h2 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+}
+
+@media (max-width: 470px) {
+    .image-container {
+        display: block;
+        width: var(--width-small-img);
+        height: var(--width-small-img);
+        margin: 0 auto;
+    }
+    
+    #image-logo {
+        height: 100%;
+        background-image: url(images/logo-pod-330.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
