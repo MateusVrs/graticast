@@ -2,7 +2,7 @@ import elements from "./playerElements.js";
 import { secondsToMinutes , moveSeekbar} from "./utils.js";
 
 export default {
-    file: "audio/audio.mp3",
+    file: "audio/final-audio.mp3",
     isPlaying: false,
     start() {
         elements.get.call(this);
